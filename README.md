@@ -1,0 +1,79 @@
+# agent-relay
+
+AI エージェント同士のやりとりで、**1枚の「頼み」が人から人へ手渡しで広がっていく様子**を再現する小さなシミュレーターです。
+
+*A small simulator in which AI agents pass a help request from person to person. Each agent decides to reply, forward, do both, or ignore it, and every step is logged.*
+
+```
+[hop 1] たかし: FORWARD → あや
+[hop 1] みさき: REPLY_AND_FORWARD → えり 「SNS で拡散しておくね」
+[hop 2] えり: REPLY 「病院に保護の連絡が来ていないか確認します」
+```
+
+## できること
+
+- **リレー（`run_relay.py`）**：依頼者が知り合いに頼みを送り、受け取った各エージェントが人物像に沿って
+  - `REPLY`（自分で手伝う）
+  - `FORWARD`（知り合いに回す）
+  - `REPLY_AND_FORWARD`（両方）
+  - `DROP`（何もしない）
+
+  を選びます。回された相手がまた判断し、頼みが広がっていきます。全ての判断と経路を JSONL で記録します。
+- **会話（`run_chat.py`）**：2つのエージェントに決まった回数だけ会話させます。
+
+## 使い方
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env          # .env を開いて ANTHROPIC_API_KEY に自分のキーを入れる
+python run_relay.py           # examples/lost_cat.json で実行
+python run_chat.py            # 2人の会話
+```
+
+API を使わずに動きだけ確かめるときは `--mock` を付けてください（お金はかかりません）。
+
+```bash
+python run_relay.py --mock
+```
+
+### 主なオプション
+
+| オプション | 意味 | 既定値 |
+|---|---|---|
+| `--world` | 人と関係と頼みを書いたファイル | `examples/lost_cat.json` |
+| `--model` | 使うモデル | `claude-haiku-4-5-20251001`（`.env` の `RELAY_MODEL` でも指定可） |
+| `--max-hops` | 何人先まで回すか | 4 |
+| `--max-receipts` | 受け取る人数の上限 | 30 |
+| `--max-calls` | API を呼ぶ回数の上限（＝料金の上限） | 40 |
+
+## 自分の「世界」を作る
+
+`examples/lost_cat.json` をコピーして書き換えます。
+
+- `people`：登場人物。`name`、`persona`（人物像）、`contacts`（回せる知り合い）
+- `request`：頼み。`from`（依頼者）、`title`、`body`、`send_to`（最初に送る相手）
+
+人物像の書き方で結果が大きく変わります。全員を親切にすると現実離れするので、忙しい人・関心のない人も混ぜてください。
+
+## ログ
+
+`runs/relay_日時.jsonl` に1行1件で記録されます。
+
+| type | 内容 |
+|---|---|
+| `SEND` | 誰から誰へ送ったか |
+| `DECISION` | 受け取った人の判断（action、回した相手、返事、理由、届いた経路） |
+| `DUPLICATE` | すでに受け取った人に、別の経路からも届いた |
+| `PARSE_ERROR` | モデルの返事が読めなかった |
+| `SUMMARY` | 届いた人数、返事の数、最大ホップ数、API の使用量など |
+
+## 注意
+
+- **料金**：API の呼び出しごとに料金がかかります。`--max-calls` で上限を決めてから実行してください。まずは安いモデルと `--mock` で試すのがおすすめです。
+- **API キー**：`.env` は `.gitignore` に入っていて、GitHub には上がりません。キーをコードに直接書かないでください。
+- **現実との差**：AI の判断は実際の人の行動と同じではありません。研究に使う場合は、実際の行動ログと比べて、どれだけ似ているかを確かめてください。
+- エージェントには外部に連絡する道具（メール送信など）を持たせていません。会話と判断だけを行います。
+
+## ライセンス
+
+MIT
