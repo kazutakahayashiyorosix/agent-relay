@@ -85,6 +85,30 @@ python run_compare.py --teacher teacher/example_synthetic.jsonl --mock --reps 20
 - 「教師データに近づいた」は「より協力的になった」とは限りません。実際の人の多くが何もしないなら、近づくほど協力は減ります。何を目標にするか（実際の行動の再現か、協力を増やす方法の検証か）を先に決めてください。
 - AI の判断にはばらつきがあります。繰り返しが少ないと、差は偶然の範囲かもしれません。
 
+## 公開データでの検証：実データを見せると、AI の見積もりは現実に近づくか（`experiments/raop_calibration.py`）
+
+Random Acts of Pizza（Althoff ほか, ICWSM 2014）の 5,671 件の「ピザをください」というお願いと、実際に誰かが贈ったかどうか（成功率は約 25%）を使います。
+各お願いについて AI に「このお願いは助けてもらえるか」を確率で答えさせ、次の3条件を比べます。
+
+| 条件 | AI に見せるもの |
+|---|---|
+| `baseline` | 何も見せない |
+| `stats` | 過去のお願いで実際に助けてもらえた割合 |
+| `examples` | 過去のお願いの例と、助けてもらえたかどうか（`--k` 件） |
+
+参考に見せる過去のお願いと、評価するお願いは重なりません。結果は表・CSV・グラフ（PNG）で出ます。
+
+```bash
+python experiments/raop_calibration.py --data path/to/pizza_request_dataset.json --n 100
+python experiments/raop_calibration.py --data path/to/pizza_request_dataset.json --mock   # API なしで流れだけ確認
+```
+
+- データは同梱していません。配布元から入手してください。
+- `--split time` にすると、古い投稿を参考に新しい投稿で評価します（時期によって成功率が変わるため、ずれは大きくなります）。
+- 見るべき数字：**AI の予想した平均成功率と実際との差**（見積もりのずれ）、Brier スコア（小さいほど良い）、AUC（0.5 は当てずっぽう）。
+- `--mock` の結果は作り物です（グラフに「MOCK」と出ます）。発表などには使わないでください。
+- このデータは公開されているので、モデルが学習時に見ている可能性があります。
+
 ## ログ
 
 `runs/relay_日時.jsonl` に1行1件で記録されます。
