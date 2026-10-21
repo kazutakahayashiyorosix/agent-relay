@@ -63,7 +63,12 @@ class MockLLM:
         last = messages[-1]["content"]
         if '"action"' in system or "action" in last:
             contacts = re.findall(r"- (\w+)（", system)
-            act = self.rng.choices(["REPLY", "FORWARD", "REPLY_AND_FORWARD", "DROP"], [0.25, 0.35, 0.15, 0.25])[0]
+            w = {"REPLY": 0.25, "FORWARD": 0.35, "REPLY_AND_FORWARD": 0.15, "DROP": 0.25}
+            # 教師データの割合が見えていたら、それに寄せる（モックで効果を確かめるため）
+            lab = {"何もしない": "DROP", "返事をする": "REPLY", "誰かに回す": "FORWARD", "返事をして回す": "REPLY_AND_FORWARD"}
+            for ja, pct in re.findall(r"- (何もしない|返事をして回す|返事をする|誰かに回す)：(\d+)%", system):
+                w[lab[ja]] = 0.3 * w[lab[ja]] + 0.7 * int(pct) / 100
+            act = self.rng.choices(list(w), list(w.values()))[0]
             fw = self.rng.sample(contacts, k=min(len(contacts), self.rng.randint(1, 2))) if contacts and "FORWARD" in act else []
             return json.dumps({"action": act, "forward_to": fw,
                                "message": "（モック）近くの公園で似た猫を見ました。" if "REPLY" in act else "",

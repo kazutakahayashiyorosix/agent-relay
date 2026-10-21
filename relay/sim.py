@@ -55,7 +55,7 @@ def load_world(path):
     return w
 
 
-def run(world, llm, max_hops=4, max_receipts=30, log_path=None, verbose=True):
+def run(world, llm, max_hops=4, max_receipts=30, log_path=None, verbose=True, teacher=None):
     people = {p["name"]: p for p in world["people"]}
     req = world["request"]
     origin = req["from"]
@@ -91,6 +91,8 @@ def run(world, llm, max_hops=4, max_receipts=30, log_path=None, verbose=True):
         contacts = [c for c in p.get("contacts", []) if c not in path]
         contact_lines = "\n".join(f"- {c}（{people[c]['persona'][:40]}）" for c in contacts) or "（回せる知り合いはいません）"
         system = AGENT_SYSTEM.format(name=name, persona=p["persona"], contacts=contact_lines)
+        if teacher is not None:
+            system += "\n\n" + teacher.block()
         user = AGENT_USER.format(title=req["title"], body=req["body"], path=" → ".join(path + [name]),
                                  note_line=f"回してくれた人の一言：「{note}」" if note else "")
         try:

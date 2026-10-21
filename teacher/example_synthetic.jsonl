@@ -1,0 +1,60 @@
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "strong"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "reply_share", "hop": 3, "tie": "strong", "reply_text": "昨日の夕方、公園で見かけたかもしれません", "forward_note": "詳しそうな人に回します"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply_share", "hop": 2, "tie": "weak", "reply_text": "知り合いの店に貼り紙を頼んでみます", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "weak"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 3, "tie": "unknown"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "share", "hop": 2, "tie": "unknown", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 3, "tie": "weak"}
+{"request_title": "子ども食堂のボランティア募集", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "unknown"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "share", "hop": 2, "tie": "weak", "forward_note": "SNS に載せておきます"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply_share", "hop": 2, "tie": "unknown", "reply_text": "週末なら手伝えます", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "strong"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply_share", "hop": 2, "tie": "weak", "reply_text": "知り合いの店に貼り紙を頼んでみます", "forward_note": "SNS に載せておきます"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "unknown"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "unknown"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "weak", "reply_text": "昨日の夕方、公園で見かけたかもしれません"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 3, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "share", "hop": 3, "tie": "weak", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "share", "hop": 1, "tie": "unknown", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "weak", "reply_text": "駅の近くで似た子を見ました"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 3, "tie": "weak"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "weak"}
+{"request_title": "子ども食堂のボランティア募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "unknown"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "unknown"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "strong", "reply_text": "週末なら手伝えます"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "reply_share", "hop": 1, "tie": "strong", "reply_text": "週末なら手伝えます", "forward_note": "SNS に載せておきます"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "share", "hop": 2, "tie": "unknown", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "none", "hop": 3, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "reply", "hop": 3, "tie": "weak", "reply_text": "駅の近くで似た子を見ました"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "weak"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply", "hop": 2, "tie": "weak", "reply_text": "駅の近くで似た子を見ました"}
+{"request_title": "子ども食堂のボランティア募集", "request_body": "（合成データ）", "action": "reply", "hop": 2, "tie": "weak", "reply_text": "週末なら手伝えます"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "weak"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "weak", "reply_text": "昨日の夕方、公園で見かけたかもしれません"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "unknown", "reply_text": "知り合いの店に貼り紙を頼んでみます"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "reply", "hop": 1, "tie": "unknown", "reply_text": "知り合いの店に貼り紙を頼んでみます"}
+{"request_title": "迷子の犬を見かけた方", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "unknown"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "share", "hop": 1, "tie": "weak", "forward_note": "詳しそうな人に回します"}
+{"request_title": "落とし物（財布）を探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "weak"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "none", "hop": 2, "tie": "strong"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "none", "hop": 1, "tie": "strong"}
+{"request_title": "迷い猫を探しています", "request_body": "（合成データ）", "action": "share", "hop": 2, "tie": "weak", "forward_note": "近所の人なので見てあげて"}
+{"request_title": "引っ越しの手伝いを探しています", "request_body": "（合成データ）", "action": "share", "hop": 3, "tie": "weak", "forward_note": "詳しそうな人に回します"}
+{"request_title": "商店街のイベントの手伝い募集", "request_body": "（合成データ）", "action": "share", "hop": 2, "tie": "unknown", "forward_note": "近所の人なので見てあげて"}

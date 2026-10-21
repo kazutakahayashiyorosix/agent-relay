@@ -3,3 +3,7 @@ runs/
 __pycache__/
 *.pyc
 .DS_Store
+# 実データの教師データは GitHub に上げない（合成の例だけ上げる）
+teacher/*
+!teacher/example_synthetic.jsonl
+!teacher/README.md
